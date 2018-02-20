@@ -1,0 +1,32 @@
+////////////////////////////JS////////////////////////////
+<script>
+    //full-width carousel images
+    $(".click_fullwidth").dblclick(function(){
+       var $imglink=$(this).attr("src");
+       console.log($imglink);
+       $("body").append('<div class="full_width_wrap"><img class="fullwidth_img" src="" alt="full image"></img></div>');
+       $(".fullwidth_img").attr('src', $imglink);
+       
+       $(".full_width_wrap").click(function(){
+            $(this).hide();
+        });
+    });
+</script>
+
+////////////////////////////CSS////////////////////////////
+/* FULLWIDTH_feachure */
+.full_width_wrap {
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 99999;
+    text-align: center;
+    overflow: scroll;
+}
+.fullwidth_img {
+    max-width: 90% !important;
+    height: auto !important;
+}
+/* //FULLWIDTH_feachure */
